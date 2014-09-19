@@ -38,6 +38,11 @@ $(document).ready(function(){
 		$(this).find('.stats').toggle("slow");
 		$(this).find('.reply').toggle("slow");
 		});
+		$tweets.first().hover(function(){
+		$(this).find('.tweet-actions').show();
+		}, function(){
+		$(this).find('.tweet-actions').hide();
+		});
 		$tweetCompose.val('');
 		$charCount.text('140');
 	});
