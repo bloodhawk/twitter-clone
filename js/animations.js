@@ -34,9 +34,9 @@ $(document).ready(function(){
 	$tweetSubmit.on("click", function(){
 		$twitterStream.prepend('<div class = "tweet"> <div class="content"> <img class ="avatar" src="img/alagoon.jpg" /> <strong class = "fullname">Aaron Rumery</strong> <span class="username">@bloodhawk</span> <p class = "tweet-text">' + $tweetCompose.val() + '</p> <div class="tweet-actions"> <ul> <li><span class="icon action-reply"></span> Reply </li> <li><span class="icon action-retweet"></span> Retweet </li> <li><span class="icon action-favorite"></span> Favorite </li> <li><span class="icon action-more"></span> More </li> </ul> </div> <div class="stats"> <div class="retweets"> <p class="num-retweets">0</p> <p> RETWEETS </p> </div> <div class = "favorites"> <p class = "num-favorites"> 0 </p> <p>FAVORITES</p> </div> <div class="users-interact"> <div> <img src="img/alagoon.jpg" /> </div> </div> <div class="time">1:04 PM - 19 Sep 13</div> </div> <div class="reply"> <img class="avatar" src="img/alagoon.jpg" /> <textarea class="tweet-compose" placeholder="Reply to @bloodhawk"/></textarea></div></div></div>');
 		$tweets = $('.tweet');
-		$tweets.click(function(){
-		$(this).children().children('.stats').toggle("slow");
-		$(this).children().children('.reply').toggle("slow");
+		$tweets.first().click(function(){
+		$(this).find('.stats').toggle("slow");
+		$(this).find('.reply').toggle("slow");
 		});
 		$tweetCompose.val('');
 		$charCount.text('140');
@@ -48,7 +48,7 @@ $(document).ready(function(){
 		$(this).children().children('.tweet-actions').hide();
 	});
 	$tweets.click(function(){
-		$(this).children().children('.stats').toggle("slow");
-		$(this).children().children('.reply').toggle("slow");
+		$(this).find('.stats').toggle("slow");
+		$(this).find('.reply').toggle("slow");
 	});
 });
